@@ -82,3 +82,26 @@ public class RentCatTest{
         assertEquals(true, cat1Exist && cat2Exist);
     }
 }
+    RentACat rc = new RentACat();
+
+    @Test
+    public void testRentCat(){
+        Cat c = Mockito.mock(Cat.class);
+        boolean flag = rc.returnCat(c);
+        assertEquals(flag, true);
+    }    
+
+    @Test 
+    public void testInvalidCat(){
+        Cat c = Mockito.mock(Cat.class);
+        boolean flag = rc.returnCat(c);
+        assertEquals(flag, false);
+    }
+
+    @Test 
+    public void testReturnInvalidCat(){
+        Cat c = Mockito.mock(Cat.class);
+        boolean flag = rc..returnCat(c);
+        assertEquals(flag, false);
+    }
+}
