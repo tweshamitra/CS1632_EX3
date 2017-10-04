@@ -10,8 +10,8 @@ public class TestRunner {
 	boolean anyFailures = false;
 
 	// ADD ANY CLASSES YOU WISH TO TEST HERE
-	classesToTest.add(RentACat.class);
-    
+	classesToTest.add(RentCatTest.class);
+
 	// For all test classes added, loop through and use JUnit
 	// to run them.
 
