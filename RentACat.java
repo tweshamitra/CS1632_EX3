@@ -17,8 +17,10 @@ public class RentACat {
      */
     
     public boolean returnCat(Cat c) {
-	// TODO
-	return false;
+	if(c.getRented() == false){
+		return false;
+	}
+	else return true;
     }
 
     /**
@@ -34,8 +36,10 @@ public class RentACat {
 
     
     public boolean rentCat(Cat c) {
-	// TODO
-	return false;
+	if(c.getRented() == true){
+		return false;
+	}
+	else return true;
     }
 
 
