@@ -59,7 +59,7 @@ public class RentACat {
     public String listCats(ArrayList<Cat> catList) {
     	String list = "";
         for(Cat cat : catList){
-            if(!cat.returnCat()){
+            if(!returnCat(cat)){
                 list = list + cat.toString() + "\n";
             }
         }
@@ -77,7 +77,7 @@ public class RentACat {
      */
 
     public boolean catExists(int id, ArrayList<Cat> catList) {
-        if (catList == null) || (catList.size() == 0) {
+        if ((catList == null) || (catList.size() == 0)) {
             return false;
         }
 
