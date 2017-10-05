@@ -81,4 +81,37 @@ public class RentCatTest{
         boolean cat2Exist = _rentACat.catExists(1, catArray);
         assertEquals(true, cat1Exist && cat2Exist);
     }
+
+    
+    //tests whether or not user can rent a cat that has not been rented
+    @Test
+    public void testRentRentedCat(){
+        Cat c = mock(Cat.class);
+        when(c.getRented()).thenReturn(true);
+        assertEquals(_rentACat.rentCat(c), false);
+    }    
+
+    //tests whether or not user can rent a cat that has already been rented
+    @Test 
+    public void testRentUnrentedCat(){
+        Cat c = mock(Cat.class);
+        when(c.getRented()).thenReturn(false);
+        assertEquals(_rentACat.rentCat(c), true);;
+    }
+
+    //tests whether or not user can return a cat that has been rented
+    @Test 
+    public void testReturnRentedCat(){
+        Cat c = mock(Cat.class);
+        when(c.getRented()).thenReturn(true);
+        assertEquals(_rentACat.returnCat(c), true);
+    }
+
+    //tests whether or not user can return a cat that has not been rented
+    @Test
+    public void testReturnUnrentedCat(){
+        Cat c = mock(Cat.class);
+        when(c.getRented()).thenReturn(false);
+        assertEquals(_rentACat.returnCat(c), false);
+    }
 }
